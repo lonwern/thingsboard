@@ -112,7 +112,7 @@ public class EntityRelationController extends BaseController {
     }
 
     @PreAuthorize("hasAnyAuthority('SYS_ADMIN','TENANT_ADMIN', 'CUSTOMER_USER')")
-    @RequestMapping(value = "/relations", method = RequestMethod.DELETE, params = {"id", "type"})
+    @RequestMapping(value = "/relations/dlc1", method = RequestMethod.DELETE, params = {"id", "type"})
     @ResponseStatus(value = HttpStatus.OK)
     public void deleteRelations(@RequestParam("entityId") String strId,
                                 @RequestParam("entityType") String strType) throws ThingsboardException {
@@ -155,7 +155,7 @@ public class EntityRelationController extends BaseController {
     }
 
     @PreAuthorize("hasAnyAuthority('SYS_ADMIN', 'TENANT_ADMIN', 'CUSTOMER_USER')")
-    @RequestMapping(value = "/relations", method = RequestMethod.GET, params = {FROM_ID, FROM_TYPE})
+    @RequestMapping(value = "/relations/dlc2", method = RequestMethod.GET, params = {FROM_ID, FROM_TYPE})
     @ResponseBody
     public List<EntityRelation> findByFrom(@RequestParam(FROM_ID) String strFromId,
                                            @RequestParam(FROM_TYPE) String strFromType,
@@ -173,7 +173,7 @@ public class EntityRelationController extends BaseController {
     }
 
     @PreAuthorize("hasAnyAuthority('SYS_ADMIN', 'TENANT_ADMIN', 'CUSTOMER_USER')")
-    @RequestMapping(value = "/relations/info", method = RequestMethod.GET, params = {FROM_ID, FROM_TYPE})
+    @RequestMapping(value = "/relations/info/dlc1", method = RequestMethod.GET, params = {FROM_ID, FROM_TYPE})
     @ResponseBody
     public List<EntityRelationInfo> findInfoByFrom(@RequestParam(FROM_ID) String strFromId,
                                                    @RequestParam(FROM_TYPE) String strFromType,
@@ -191,7 +191,7 @@ public class EntityRelationController extends BaseController {
     }
 
     @PreAuthorize("hasAnyAuthority('SYS_ADMIN', 'TENANT_ADMIN', 'CUSTOMER_USER')")
-    @RequestMapping(value = "/relations", method = RequestMethod.GET, params = {FROM_ID, FROM_TYPE, RELATION_TYPE})
+    @RequestMapping(value = "/relations/dlc3", method = RequestMethod.GET, params = {FROM_ID, FROM_TYPE, RELATION_TYPE})
     @ResponseBody
     public List<EntityRelation> findByFrom(@RequestParam(FROM_ID) String strFromId,
                                            @RequestParam(FROM_TYPE) String strFromType,
@@ -211,7 +211,7 @@ public class EntityRelationController extends BaseController {
     }
 
     @PreAuthorize("hasAnyAuthority('SYS_ADMIN', 'TENANT_ADMIN', 'CUSTOMER_USER')")
-    @RequestMapping(value = "/relations", method = RequestMethod.GET, params = {TO_ID, TO_TYPE})
+    @RequestMapping(value = "/relations/dlc4", method = RequestMethod.GET, params = {TO_ID, TO_TYPE})
     @ResponseBody
     public List<EntityRelation> findByTo(@RequestParam(TO_ID) String strToId,
                                          @RequestParam(TO_TYPE) String strToType,
@@ -229,7 +229,7 @@ public class EntityRelationController extends BaseController {
     }
 
     @PreAuthorize("hasAnyAuthority('SYS_ADMIN', 'TENANT_ADMIN', 'CUSTOMER_USER')")
-    @RequestMapping(value = "/relations/info", method = RequestMethod.GET, params = {TO_ID, TO_TYPE})
+    @RequestMapping(value = "/relations/info/dlc2", method = RequestMethod.GET, params = {TO_ID, TO_TYPE})
     @ResponseBody
     public List<EntityRelationInfo> findInfoByTo(@RequestParam(TO_ID) String strToId,
                                                  @RequestParam(TO_TYPE) String strToType,
@@ -247,7 +247,7 @@ public class EntityRelationController extends BaseController {
     }
 
     @PreAuthorize("hasAnyAuthority('SYS_ADMIN', 'TENANT_ADMIN', 'CUSTOMER_USER')")
-    @RequestMapping(value = "/relations", method = RequestMethod.GET, params = {TO_ID, TO_TYPE, RELATION_TYPE})
+    @RequestMapping(value = "/relations/dlc5", method = RequestMethod.GET, params = {TO_ID, TO_TYPE, RELATION_TYPE})
     @ResponseBody
     public List<EntityRelation> findByTo(@RequestParam(TO_ID) String strToId,
                                          @RequestParam(TO_TYPE) String strToType,
@@ -267,7 +267,7 @@ public class EntityRelationController extends BaseController {
     }
 
     @PreAuthorize("hasAnyAuthority('SYS_ADMIN', 'TENANT_ADMIN', 'CUSTOMER_USER')")
-    @RequestMapping(value = "/relations", method = RequestMethod.POST)
+    @RequestMapping(value = "/relations/dlc6", method = RequestMethod.POST)
     @ResponseBody
     public List<EntityRelation> findByQuery(@RequestBody EntityRelationsQuery query) throws ThingsboardException {
         checkNotNull(query);
@@ -282,7 +282,7 @@ public class EntityRelationController extends BaseController {
     }
 
     @PreAuthorize("hasAnyAuthority('SYS_ADMIN', 'TENANT_ADMIN', 'CUSTOMER_USER')")
-    @RequestMapping(value = "/relations/info", method = RequestMethod.POST)
+    @RequestMapping(value = "/relations/info/dlc3", method = RequestMethod.POST)
     @ResponseBody
     public List<EntityRelationInfo> findInfoByQuery(@RequestBody EntityRelationsQuery query) throws ThingsboardException {
         checkNotNull(query);

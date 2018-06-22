@@ -84,7 +84,7 @@ public class WidgetsBundleController extends BaseController {
     }
 
     @PreAuthorize("hasAnyAuthority('SYS_ADMIN', 'TENANT_ADMIN', 'CUSTOMER_USER')")
-    @RequestMapping(value = "/widgetsBundles", params = { "limit" }, method = RequestMethod.GET)
+    @RequestMapping(value = "/widgetsBundles/dlc1", params = { "limit" }, method = RequestMethod.GET)
     @ResponseBody
     public TextPageData<WidgetsBundle> getWidgetsBundles(
             @RequestParam int limit,
@@ -105,7 +105,7 @@ public class WidgetsBundleController extends BaseController {
     }
 
     @PreAuthorize("hasAnyAuthority('SYS_ADMIN', 'TENANT_ADMIN', 'CUSTOMER_USER')")
-    @RequestMapping(value = "/widgetsBundles", method = RequestMethod.GET)
+    @RequestMapping(value = "/widgetsBundles/dlc2", method = RequestMethod.GET)
     @ResponseBody
     public List<WidgetsBundle> getWidgetsBundles() throws ThingsboardException {
         try {

@@ -208,7 +208,7 @@ public class AssetController extends BaseController {
     }
 
     @PreAuthorize("hasAuthority('TENANT_ADMIN')")
-    @RequestMapping(value = "/tenant/assets", params = {"limit"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/tenant/assets/dlc1", params = {"limit"}, method = RequestMethod.GET)
     @ResponseBody
     public TextPageData<Asset> getTenantAssets(
             @RequestParam int limit,
@@ -230,7 +230,7 @@ public class AssetController extends BaseController {
     }
 
     @PreAuthorize("hasAuthority('TENANT_ADMIN')")
-    @RequestMapping(value = "/tenant/assets", params = {"assetName"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/tenant/assets/dlc2", params = {"assetName"}, method = RequestMethod.GET)
     @ResponseBody
     public Asset getTenantAsset(
             @RequestParam String assetName) throws ThingsboardException {
